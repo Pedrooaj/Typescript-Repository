@@ -27,3 +27,5 @@ const pessoa: Pessoa = {
     sobrenome: "lemos",
     idade: 18
 }
+
+export default 1;
