@@ -1,4 +1,4 @@
-// tipo literal 
+// tipo literal
 
 let x = 11;
 const y = 10; // tipo literal pois ele nunca muda e não consegue ser reatribuido
