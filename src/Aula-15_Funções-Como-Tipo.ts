@@ -4,7 +4,7 @@
 //o exemplo abaixo e o exemplo de uma função tipada que retorna uma string...
 type MapStringsCallback = (item: string) => string;
 
-function MapStrings(array: string[], callbackfn: MapStringsCallback): string[] {
+const MapStrings = (array: string[], callbackfn: MapStringsCallback): string[] =>  {
     const newArray: string[] = [];
     for(let i = 0; i < array.length; i++){
         const item = array[i];
@@ -16,7 +16,6 @@ function MapStrings(array: string[], callbackfn: MapStringsCallback): string[] {
 const abc = ["a", "b","c"];
 
 const MappedStrings = MapStrings(abc, (item) => item.toUpperCase())
-
 console.log(MappedStrings);
 
 
