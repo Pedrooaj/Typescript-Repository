@@ -6,6 +6,7 @@ const body = document.querySelector('body');
 if (body) body.style.background = 'black';
 
 
+
 // non null assertion (!)
 const body2 = document.querySelector('body')!;
 body2.style.background = "black";
@@ -15,7 +16,6 @@ const body3 = document.querySelector('body') as HTMLBodyElement;
 body3.style.background = "black";
 
 // HTMLElement
-
 const input = document.querySelector('input') as HTMLInputElement;
 input.value = "qualquer coisa";
 input.focus();
