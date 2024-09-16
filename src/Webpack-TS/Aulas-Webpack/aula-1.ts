@@ -1,4 +1,4 @@
-import isEmail from "validator/lib/isEmail";
+import isEmail from "validator/es/lib/isEmail";
 
 const inputUser = document.querySelector('#username') as HTMLInputElement;
 const inputEmail = document.querySelector('#email') as HTMLInputElement;

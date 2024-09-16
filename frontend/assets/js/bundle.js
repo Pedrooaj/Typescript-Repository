@@ -13,7 +13,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", ({ value: true }));
-const isEmail_1 = __importDefault(__webpack_require__(/*! validator/lib/isEmail */ "./node_modules/validator/lib/isEmail.js"));
+const isEmail_1 = __importDefault(__webpack_require__(/*! validator/es/lib/isEmail */ "./node_modules/validator/es/lib/isEmail.js"));
 const inputUser = document.querySelector('#username');
 const inputEmail = document.querySelector('#email');
 const inputPassword = document.querySelector('#password');
@@ -65,24 +65,23 @@ function sendForm(form) {
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/isByteLength.js":
-/*!****************************************************!*\
-  !*** ./node_modules/validator/lib/isByteLength.js ***!
-  \****************************************************/
-/***/ ((module, exports, __webpack_require__) => {
+/***/ "./node_modules/validator/es/lib/isByteLength.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/validator/es/lib/isByteLength.js ***!
+  \*******************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = isByteLength;
-var _assertString = _interopRequireDefault(__webpack_require__(/*! ./util/assertString */ "./node_modules/validator/lib/util/assertString.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ isByteLength)
+/* harmony export */ });
+/* harmony import */ var _util_assertString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/assertString */ "./node_modules/validator/es/lib/util/assertString.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+
+
 /* eslint-disable prefer-rest-params */
 function isByteLength(str, options) {
-  (0, _assertString.default)(str);
+  (0,_util_assertString__WEBPACK_IMPORTED_MODULE_0__["default"])(str);
   var min;
   var max;
   if (_typeof(options) === 'object') {
@@ -96,29 +95,29 @@ function isByteLength(str, options) {
   var len = encodeURI(str).split(/%..|./).length - 1;
   return len >= min && (typeof max === 'undefined' || len <= max);
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/isEmail.js":
-/*!***********************************************!*\
-  !*** ./node_modules/validator/lib/isEmail.js ***!
-  \***********************************************/
-/***/ ((module, exports, __webpack_require__) => {
+/***/ "./node_modules/validator/es/lib/isEmail.js":
+/*!**************************************************!*\
+  !*** ./node_modules/validator/es/lib/isEmail.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ isEmail)
+/* harmony export */ });
+/* harmony import */ var _util_assertString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/assertString */ "./node_modules/validator/es/lib/util/assertString.js");
+/* harmony import */ var _isByteLength__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./isByteLength */ "./node_modules/validator/es/lib/isByteLength.js");
+/* harmony import */ var _isFQDN__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./isFQDN */ "./node_modules/validator/es/lib/isFQDN.js");
+/* harmony import */ var _isIP__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./isIP */ "./node_modules/validator/es/lib/isIP.js");
+/* harmony import */ var _util_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/merge */ "./node_modules/validator/es/lib/util/merge.js");
 
 
 
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = isEmail;
-var _assertString = _interopRequireDefault(__webpack_require__(/*! ./util/assertString */ "./node_modules/validator/lib/util/assertString.js"));
-var _isByteLength = _interopRequireDefault(__webpack_require__(/*! ./isByteLength */ "./node_modules/validator/lib/isByteLength.js"));
-var _isFQDN = _interopRequireDefault(__webpack_require__(/*! ./isFQDN */ "./node_modules/validator/lib/isFQDN.js"));
-var _isIP = _interopRequireDefault(__webpack_require__(/*! ./isIP */ "./node_modules/validator/lib/isIP.js"));
-var _merge = _interopRequireDefault(__webpack_require__(/*! ./util/merge */ "./node_modules/validator/lib/util/merge.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+
 var default_email_options = {
   allow_display_name: false,
   allow_underscores: false,
@@ -172,8 +171,8 @@ function validateDisplayName(display_name) {
   return true;
 }
 function isEmail(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_email_options);
+  (0,_util_assertString__WEBPACK_IMPORTED_MODULE_0__["default"])(str);
+  options = (0,_util_merge__WEBPACK_IMPORTED_MODULE_1__["default"])(options, default_email_options);
   if (options.require_display_name || options.allow_display_name) {
     var display_email = str.match(splitNameAddress);
     if (display_email) {
@@ -224,7 +223,7 @@ function isEmail(str, options) {
     var username = user.split('+')[0];
 
     // Dots are not included in gmail length restriction
-    if (!(0, _isByteLength.default)(username.replace(/\./g, ''), {
+    if (!(0,_isByteLength__WEBPACK_IMPORTED_MODULE_2__["default"])(username.replace(/\./g, ''), {
       min: 6,
       max: 30
     })) {
@@ -237,14 +236,14 @@ function isEmail(str, options) {
       }
     }
   }
-  if (options.ignore_max_length === false && (!(0, _isByteLength.default)(user, {
+  if (options.ignore_max_length === false && (!(0,_isByteLength__WEBPACK_IMPORTED_MODULE_2__["default"])(user, {
     max: 64
-  }) || !(0, _isByteLength.default)(domain, {
+  }) || !(0,_isByteLength__WEBPACK_IMPORTED_MODULE_2__["default"])(domain, {
     max: 254
   }))) {
     return false;
   }
-  if (!(0, _isFQDN.default)(domain, {
+  if (!(0,_isFQDN__WEBPACK_IMPORTED_MODULE_3__["default"])(domain, {
     require_tld: options.require_tld,
     ignore_max_length: options.ignore_max_length,
     allow_underscores: options.allow_underscores
@@ -252,12 +251,12 @@ function isEmail(str, options) {
     if (!options.allow_ip_domain) {
       return false;
     }
-    if (!(0, _isIP.default)(domain)) {
+    if (!(0,_isIP__WEBPACK_IMPORTED_MODULE_4__["default"])(domain)) {
       if (!domain.startsWith('[') || !domain.endsWith(']')) {
         return false;
       }
       var noBracketdomain = domain.slice(1, -1);
-      if (noBracketdomain.length === 0 || !(0, _isIP.default)(noBracketdomain)) {
+      if (noBracketdomain.length === 0 || !(0,_isIP__WEBPACK_IMPORTED_MODULE_4__["default"])(noBracketdomain)) {
         return false;
       }
     }
@@ -278,26 +277,23 @@ function isEmail(str, options) {
   }
   return true;
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/isFQDN.js":
-/*!**********************************************!*\
-  !*** ./node_modules/validator/lib/isFQDN.js ***!
-  \**********************************************/
-/***/ ((module, exports, __webpack_require__) => {
+/***/ "./node_modules/validator/es/lib/isFQDN.js":
+/*!*************************************************!*\
+  !*** ./node_modules/validator/es/lib/isFQDN.js ***!
+  \*************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ isFQDN)
+/* harmony export */ });
+/* harmony import */ var _util_assertString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/assertString */ "./node_modules/validator/es/lib/util/assertString.js");
+/* harmony import */ var _util_merge__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./util/merge */ "./node_modules/validator/es/lib/util/merge.js");
 
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = isFQDN;
-var _assertString = _interopRequireDefault(__webpack_require__(/*! ./util/assertString */ "./node_modules/validator/lib/util/assertString.js"));
-var _merge = _interopRequireDefault(__webpack_require__(/*! ./util/merge */ "./node_modules/validator/lib/util/merge.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 var default_fqdn_options = {
   require_tld: true,
   allow_underscores: false,
@@ -307,8 +303,8 @@ var default_fqdn_options = {
   ignore_max_length: false
 };
 function isFQDN(str, options) {
-  (0, _assertString.default)(str);
-  options = (0, _merge.default)(options, default_fqdn_options);
+  (0,_util_assertString__WEBPACK_IMPORTED_MODULE_0__["default"])(str);
+  options = (0,_util_merge__WEBPACK_IMPORTED_MODULE_1__["default"])(options, default_fqdn_options);
 
   /* Remove the optional trailing dot before checking validity */
   if (options.allow_trailing_dot && str[str.length - 1] === '.') {
@@ -363,25 +359,21 @@ function isFQDN(str, options) {
     return true;
   });
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/isIP.js":
-/*!********************************************!*\
-  !*** ./node_modules/validator/lib/isIP.js ***!
-  \********************************************/
-/***/ ((module, exports, __webpack_require__) => {
+/***/ "./node_modules/validator/es/lib/isIP.js":
+/*!***********************************************!*\
+  !*** ./node_modules/validator/es/lib/isIP.js ***!
+  \***********************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ isIP)
+/* harmony export */ });
+/* harmony import */ var _util_assertString__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./util/assertString */ "./node_modules/validator/es/lib/util/assertString.js");
 
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = isIP;
-var _assertString = _interopRequireDefault(__webpack_require__(/*! ./util/assertString */ "./node_modules/validator/lib/util/assertString.js"));
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
 11.3.  Examples
 
@@ -418,7 +410,7 @@ var IPv6SegmentFormat = '(?:[0-9a-fA-F]{1,4})';
 var IPv6AddressRegExp = new RegExp('^(' + "(?:".concat(IPv6SegmentFormat, ":){7}(?:").concat(IPv6SegmentFormat, "|:)|") + "(?:".concat(IPv6SegmentFormat, ":){6}(?:").concat(IPv4AddressFormat, "|:").concat(IPv6SegmentFormat, "|:)|") + "(?:".concat(IPv6SegmentFormat, ":){5}(?::").concat(IPv4AddressFormat, "|(:").concat(IPv6SegmentFormat, "){1,2}|:)|") + "(?:".concat(IPv6SegmentFormat, ":){4}(?:(:").concat(IPv6SegmentFormat, "){0,1}:").concat(IPv4AddressFormat, "|(:").concat(IPv6SegmentFormat, "){1,3}|:)|") + "(?:".concat(IPv6SegmentFormat, ":){3}(?:(:").concat(IPv6SegmentFormat, "){0,2}:").concat(IPv4AddressFormat, "|(:").concat(IPv6SegmentFormat, "){1,4}|:)|") + "(?:".concat(IPv6SegmentFormat, ":){2}(?:(:").concat(IPv6SegmentFormat, "){0,3}:").concat(IPv4AddressFormat, "|(:").concat(IPv6SegmentFormat, "){1,5}|:)|") + "(?:".concat(IPv6SegmentFormat, ":){1}(?:(:").concat(IPv6SegmentFormat, "){0,4}:").concat(IPv4AddressFormat, "|(:").concat(IPv6SegmentFormat, "){1,6}|:)|") + "(?::((?::".concat(IPv6SegmentFormat, "){0,5}:").concat(IPv4AddressFormat, "|(?::").concat(IPv6SegmentFormat, "){1,7}|:))") + ')(%[0-9a-zA-Z-.:]{1,})?$');
 function isIP(str) {
   var version = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
-  (0, _assertString.default)(str);
+  (0,_util_assertString__WEBPACK_IMPORTED_MODULE_0__["default"])(str);
   version = String(version);
   if (!version) {
     return isIP(str, 4) || isIP(str, 6);
@@ -431,23 +423,19 @@ function isIP(str) {
   }
   return false;
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/util/assertString.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/validator/lib/util/assertString.js ***!
-  \*********************************************************/
-/***/ ((module, exports) => {
+/***/ "./node_modules/validator/es/lib/util/assertString.js":
+/*!************************************************************!*\
+  !*** ./node_modules/validator/es/lib/util/assertString.js ***!
+  \************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = assertString;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ assertString)
+/* harmony export */ });
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function assertString(input) {
   var isString = typeof input === 'string' || input instanceof String;
@@ -457,23 +445,19 @@ function assertString(input) {
     throw new TypeError("Expected a string but received a ".concat(invalidType));
   }
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ }),
 
-/***/ "./node_modules/validator/lib/util/merge.js":
-/*!**************************************************!*\
-  !*** ./node_modules/validator/lib/util/merge.js ***!
-  \**************************************************/
-/***/ ((module, exports) => {
+/***/ "./node_modules/validator/es/lib/util/merge.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/validator/es/lib/util/merge.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-
-
-Object.defineProperty(exports, "__esModule", ({
-  value: true
-}));
-exports["default"] = merge;
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ merge)
+/* harmony export */ });
 function merge() {
   var obj = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var defaults = arguments.length > 1 ? arguments[1] : undefined;
@@ -484,8 +468,6 @@ function merge() {
   }
   return obj;
 }
-module.exports = exports.default;
-module.exports["default"] = exports.default;
 
 /***/ })
 
@@ -514,6 +496,35 @@ module.exports["default"] = exports.default;
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/************************************************************************/
+/******/ 	/* webpack/runtime/define property getters */
+/******/ 	(() => {
+/******/ 		// define getter functions for harmony exports
+/******/ 		__webpack_require__.d = (exports, definition) => {
+/******/ 			for(var key in definition) {
+/******/ 				if(__webpack_require__.o(definition, key) && !__webpack_require__.o(exports, key)) {
+/******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
+/******/ 				}
+/******/ 			}
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/hasOwnProperty shorthand */
+/******/ 	(() => {
+/******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/make namespace object */
+/******/ 	(() => {
+/******/ 		// define __esModule on exports
+/******/ 		__webpack_require__.r = (exports) => {
+/******/ 			if(typeof Symbol !== 'undefined' && Symbol.toStringTag) {
+/******/ 				Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+/******/ 			}
+/******/ 			Object.defineProperty(exports, '__esModule', { value: true });
+/******/ 		};
+/******/ 	})();
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
