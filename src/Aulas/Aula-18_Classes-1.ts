@@ -3,9 +3,6 @@ export class Empresa{
     private readonly colab: Colaborador[] = [];
     protected readonly cpnj: string;
 
-
-    
-
     constructor(nome: string, cpnj: string){
         this.nome = nome;  
         this.cpnj = cpnj;
@@ -26,22 +23,14 @@ export class Empresa{
     }
 }
 
-class Colaborador{
-    public readonly nome: string; 
-    public readonly sobrenome: string;
-    
-    constructor(nome: string, sobrenome: string){
-        this.nome = nome;
-        this.sobrenome = nome;
-    }
-}
+
 // Outra forma de inicializar um objeto com construtor
-// class Colaborador{
-//     constructor(
-//         public readonly nome: string,
-//         public readonly sobreneme: string,
-//     ){}
-// }
+class Colaborador{
+    constructor(
+        public readonly nome: string,
+        public readonly sobrenome: string,
+    ){}
+}
 
 
 
