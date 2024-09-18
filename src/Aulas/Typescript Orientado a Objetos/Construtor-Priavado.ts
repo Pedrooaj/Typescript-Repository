@@ -19,7 +19,6 @@ export class Database{
         };
 
         console.log("Criando nova instancia");
-        
         Database.database = new Database(host, user, password);
         return Database.database;
     }
@@ -28,8 +27,7 @@ export class Database{
 const db1 = Database.getDatabase("localhost", 'root','1234');
 db1.connect();
 
-const db2 = Database.getDatabase("localhost", 'root','1234');
+const db2 = Database.getDatabase("localhost", 'root','123');
 db2.connect();
-
 
 console.log(db1 === db2);
