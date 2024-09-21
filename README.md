@@ -1,7 +1,7 @@
 
 # Repositorio de Typescript
 
-Este Repositorio se trata de arquivos relacionado há meus aprendizados dee Typescript caso tenha alguma duvida abaixo irei mostrar com utiliza ele.
+Este Repositorio se trata de arquivos relacionado há meus aprendizados de Typescript caso tenha alguma duvida abaixo irei mostrar com utiliza ele.
 
 ## Instalação
 
