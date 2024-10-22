@@ -8,7 +8,7 @@ type Produto = {
 type Pedido = {
     produtos: Produto[];
     id: number;  
-    valor: number 
+    valor: number;
 }
 
 const db = {
@@ -24,13 +24,13 @@ const realizarPedido = (carrinho: Produto[]) => {
         };
         carrinho.map(produto => {
             pedido.valor += produto.valor;
-            pedido.produtos.push(produto)
+            pedido.produtos.push(produto);
         })
         db.pedidos.push(pedido);
         
-        return "Sucesso ao realizar pedido"
+        return "Sucesso ao realizar pedido";
     } catch (error) {
-        return "Erro ao realizar Pedido"
+        return "Erro ao realizar Pedido";
     }
 }
 
